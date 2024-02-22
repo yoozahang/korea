@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Korean Language Learning</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        div {
+        height: 700px;
+        width: 600px;
+        margin: 1em;
+        padding: 1em 3em;
+        text-align: center;
+        background-color: #ecf0f1;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -21,34 +36,20 @@
         <a href="https://yoozahang.github.io/korea/us">About Us</a>
     </nav>
 
-    <a href="https://yoozahang.github.io/korea/vocabulary">
-        <section id="vocabulary">
-            <h2>Vocabulary</h2>
-            <p>단어공부하자!</p>
-            <!-- Add more content here -->
-        </section>
-    </a>
-    <a href="https://yoozahang.github.io/korea/grammar">
-        <section id="grammar">
-            <h2>Grammar</h2>
-            <p>문법으로 문장을 만들자!</p>
-            <!-- Add more content here -->
-        </section>
-    </a>
-    <a href="https://yoozahang.github.io/korea/phrases">
-        <section id="phrases">
-            <h2>Phrases</h2>
-            <p>표현을 배워보자!</p>
-            <!-- Add more content here -->
-        </section>
-    </a>
-    <a href="https://yoozahang.github.io/korea/us">
-        <section id="us">
-            <h2>About Us</h2>
-            <p>I want to help you study korean language</p>
-            <!-- Add more content here -->
-        </section>
-    </a>
+    <div id="markdown-content">
+        # Hello, Markdown!
+        This is a simple Markdown example.
+        <!-- Add more content here -->
+    </div>
+
+    <div id="html-output"></div>
+
+    <script>
+        var markdownText = document.getElementById('markdown-content').innerText;
+        var html = marked(markdownText);
+        document.getElementById('html-output').innerHTML = html;
+    </script>
+
     <footer>
         <p>&copy; 2024 Korean Language Learning. All rights reserved.</p>
     </footer>
