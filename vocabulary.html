@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Korean Language Learning</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
-        div {
+        .html-output{
         height: 700px;
         width: 600px;
         margin: 1em;
@@ -16,10 +15,9 @@
         background-color: #ecf0f1;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        transition: background-color 0.3s ease;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <header>
@@ -36,22 +34,22 @@
         <a href="https://yoozahang.github.io/korea/us">About Us</a>
     </nav>
 
-    <div id="markdown-content">
+    <div class="markdown-content">
         # Hello, Markdown!
         This is a simple Markdown example.
-        <!-- Add more content here -->
     </div>
 
-    <div id="html-output"></div>
-
-    <script>
-        var markdownText = document.getElementById('markdown-content').innerText;
-        var html = marked(markdownText);
-        document.getElementById('html-output').innerHTML = html;
-    </script>
+    <div class="html-output"></div>
 
     <footer>
         <p>&copy; 2024 Korean Language Learning. All rights reserved.</p>
     </footer>
+
+    <script>
+        var markdownText = document.querySelector('.markdown-content').innerText;
+        var html = marked(markdownText);
+        document.querySelector('.html-output').innerHTML = html;
+    </script>
+
 </body>
 </html>
